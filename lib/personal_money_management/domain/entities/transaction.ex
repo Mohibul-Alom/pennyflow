@@ -1,3 +1,3 @@
-defmodule PersonalMoneyManagement.Transaction do
-  defstruct [:id, :amount, :description, :date, :account_id, :user_id]
+defmodule PersonalMoneyManagement.Domain.Entities.Transaction do
+  defstruct id: nil, amount: 0, date: nil, category: nil
 end

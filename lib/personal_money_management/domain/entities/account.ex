@@ -1,3 +1,3 @@
-defmodule PersonalMoneyManagement.Account do
-  defstruct [:id, :name, :balance, :users, :transactions]
+defmodule PersonalMoneyManagement.Domain.Entities.Account do
+  defstruct id: nil, balance: 0, transactions: []
 end
