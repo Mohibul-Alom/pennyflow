@@ -1,10 +1,16 @@
 defmodule PersonalMoneyManagement.Application.UseCases.CreateAccount do
-  alias PersonalMoneyManagement.Application
-  alias PersonalMoneyManagement.Domain.Entities.Account
+  alias PersonalMoneyManagement.Dependencies
 
   def execute(account_params) do
-    repo = Application.account_repository()
-    account = %Account{id: UUID.uuid4(), balance: account_params.balance}
+    repo = Dependencies.account_repository()
+    account = build_account(account_params)
     repo.create_account(account)
+  end
+
+  defp build_account(account_params) do
+    %PersonalMoneyManagement.Domain.Entities.Account{
+      id: UUID.uuid4(),
+      balance: account_params.balance
+    }
   end
 end
