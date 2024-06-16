@@ -10,7 +10,7 @@ defmodule PersonalMoneyManagement.Application.UseCases.CreateAccount do
   defp build_account(account_params) do
     %PersonalMoneyManagement.Domain.Entities.Account{
       id: UUID.uuid4(),
-      balance: account_params.balance
+      balance: Map.fetch!(account_params, "balance")
     }
   end
 end

@@ -8,6 +8,7 @@ defmodule PersonalMoneyManagement.Application do
     children = [
       # Define workers and child supervisors to be supervised
       # worker(PersonalMoneyManagement.Worker, [arg1, arg2, arg3])
+      PersonalMoneyManagement.Infrastructure.Web.Endpoint
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
