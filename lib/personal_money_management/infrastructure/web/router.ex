@@ -6,7 +6,7 @@ defmodule PersonalMoneyManagement.Infrastructure.Web.Router do
   plug(:match)
   plug(:dispatch)
 
-  post "/account" do
+  post "/accounts" do
     {:ok, body, conn} = Plug.Conn.read_body(conn)
     account_params = Jason.decode!(body)
 
