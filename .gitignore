@@ -24,3 +24,6 @@ personal_money_management-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/
+
+
+accounts.json
