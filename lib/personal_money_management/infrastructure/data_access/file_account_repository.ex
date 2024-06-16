@@ -51,6 +51,6 @@ defmodule PersonalMoneyManagement.Infrastructure.DataAccess.FileAccountRepositor
   defp write_accounts(accounts) do
     accounts
     |> Jason.encode!()
-    |> File.write!(@data_file)
+    |> (fn json_data -> File.write!(@data_file, json_data) end).()
   end
 end
